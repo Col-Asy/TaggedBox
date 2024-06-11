@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  transition: all .5s ease;
+  color: black;
+}
+
+body{
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-variant: small-caps;
+  
+  @apply
+  text-5xl
+  font-bold
+  tracking-widest
+}
+
+h2{
+  font-variant: small-caps;
+
+  @apply
+  text-3xl
+  font-bold
+  tracking-widest
+}
+
+h3{
+  font-variant: small-caps;
+
+  @apply
+  text-2xl
+  font-bold
+  tracking-wider
+}
+
+h4{
+  font-variant: small-caps;
+
+  @apply
+  text-lg
+  font-bold
+  tracking-wider
+}
+
+p, 
+div{
+  @apply
+  font-light
+  tracking-wide
+}
+

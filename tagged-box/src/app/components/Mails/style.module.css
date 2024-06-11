@@ -1,0 +1,31 @@
+.title{
+    font-variant: none;
+}
+
+.importance{
+    width: fit-content;
+    height: 1.5rem;
+    background-color: darkslategrey;
+}
+
+.round{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.urgent{
+    background-color: #e21a1a;
+}
+
+.important{
+    background-color: #e29a15;
+}
+
+.moderate{
+    background-color: #9370DB;
+}
+
+.spam{
+    background-color: #ADD8E6;
+}
