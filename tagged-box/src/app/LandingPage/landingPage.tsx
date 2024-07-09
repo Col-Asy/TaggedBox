@@ -1,7 +1,24 @@
+'use client'
 import React from 'react'
 import classes from "./style.module.css";
 
 export default function LandingPage() {
+  const handleGoogleSignIn = () => {
+    // Make an API call to your backend's /auth/google endpoint
+    fetch('http://localhost:5000/auth/google')
+      .then((response) => {
+        if (response.ok) {
+          // Redirect to Google's authentication page
+          window.location.href = response.url;
+        } else {
+          console.error('Error initiating Google OAuth');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
   return (
     <div className={`flex flex-col md:flex-row w-full h-[100vh] justify-evenly items-center ${classes['container']}`}>
       <div className="flex-col space-y-14">
@@ -23,7 +40,7 @@ export default function LandingPage() {
 
       <div>
         <form>
-          <button className="flex items-center justify-center bg-blue-600 text-white text-[100%] active:bg-blue-600 font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-fit sm:w-auto" type="button" style={{ transition: "all .15s ease" }}> 
+          <button className="flex items-center justify-center bg-blue-600 text-white text-[100%] active:bg-blue-600 font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-fit sm:w-auto" type="button" style={{ transition: "all .15s ease" }} onClick={handleGoogleSignIn}> 
             <img src="/icon-google.svg" alt="Google Icon" className="h-auto w-[12%] mr-3 rounded-sm bg-white" />
             Sign In with Google
           </button>
